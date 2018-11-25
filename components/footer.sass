@@ -1,0 +1,88 @@
+.footer
+  align-items: center
+  background: rgba($grey-light, .1)
+  display: flex
+  height: 100px
+  justify-content: space-between
+  width: 100% 
+
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__links
+    display: inline-flex
+    justify-content: space-between
+    min-width: 310px
+
+    &:first-child
+      margin-right: 295px
+      min-width: 130px
+
+  &__link
+    color: $blue-dark
+    font: 12px/30px $MRegular
+    
+  &__socials
+    align-items: center
+    display: inline-flex
+    margin-left: 295px
+    min-width: 230px
+    justify-content: space-between
+    
+    a
+      align-items: center
+      display: flex
+      height: 21px
+      transition: opacity .5s ease-out
+      justify-content: center
+      width: 21px
+
+      img
+        height: auto
+        max-width: 100%
+
+      &:hover
+        opacity: .4
+
+  @media(max-width: 1440px)
+    .container
+      max-width: 1024px
+
+    &__links
+      &:first-child
+        margin-right: 132px
+
+    &__socials
+      margin-left: 132px
+
+  @media(max-width: 1023px)
+    box-sizing: border-box
+    height: auto
+    padding: 31px 42px 60px 31px
+
+    .container
+      align-items: flex-start
+      flex-wrap: wrap
+      padding: 0
+      width: 320px
+
+    &__links
+      flex-direction: column
+      min-width: auto
+      align-items: flex-start
+      width: 50%
+
+      &:first-child
+        margin-right: 0
+        min-width: auto
+        width: 80px
+
+    &__link
+      font: 14px/40px $MRegular
+      white-space: nowrap
+
+    &__socials
+      margin: 48px 0 0 0
+      width: 100%

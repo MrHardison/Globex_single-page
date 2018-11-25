@@ -1,0 +1,68 @@
+.lang
+	background: #fff
+	border-radius: 50%
+	cursor: pointer
+	height: 46px
+	position: relative
+	width: 46px
+
+	&:hover
+		opacity: .8
+
+	& > img
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+
+	&-list
+		left: 50%
+		opacity: 0
+		position: absolute
+		top: 70px
+		transition: opacity .5s
+		transform: translateX(-50%)
+
+		.item
+			cursor: pointer
+			border-radius: 50%
+			height: 28px
+			margin-bottom: 15px
+			width: 28px
+
+			&:last-child
+				margin-bottom: 0
+
+			img
+				height: auto
+				max-width: 100%
+
+	&.open
+		opacity: .8
+		
+		.lang-list
+			opacity: 1
+
+	@media(max-width: 1550px)
+    height: 40px
+    width: 40px
+
+    & > img
+      height: auto
+      max-width: 70%
+
+    &-list
+      .item
+        height: 25px
+        width: 25px
+
+	@media(max-width: 1023px)
+		height: 32px
+		width: 32px
+
+		&-list
+			top: 50px
+			
+			.item
+				height: 20px
+				width: 20px

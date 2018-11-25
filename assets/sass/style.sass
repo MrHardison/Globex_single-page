@@ -1,0 +1,364 @@
+.desktop
+  .slogan
+    margin-left: 20px
+    align-items: center
+    background: rgba($grey-light, .4)
+    border-radius: 5px
+    box-sizing: border-box
+    display: flex
+    height: 36px
+    padding: 9px 10px
+    position: relative
+
+    &::before
+      border-top: 4px solid transparent
+      border-right: 8px solid rgba($grey-light, .4)
+      border-bottom: 4px solid transparent
+      content: ''
+      height: 0
+      left: -8px
+      position: absolute
+      transform: translateY(-50%)
+      top: 50%
+      width: 0
+
+    &__text
+      color: #000
+      font: 16px/14px $Avenir
+
+      &_colored
+        color: $blue
+
+  .screen
+    margin-bottom: 200px
+
+    .container
+      align-items: center
+      box-sizing: border-box
+      display: flex
+      justify-content: space-between
+
+      @media(max-width: 1023px)
+        flex-wrap: wrap
+
+    .text
+      margin-top: 60px
+
+    &__info
+      transition: opacity .5s
+
+      &_intro
+        width: 576px
+
+        .h1
+          width: 370px
+
+        .text
+          margin-top: 64px
+
+      &_unified
+        width: 415px
+
+        @media(max-width: 1250px)
+          width: 350px
+
+      &_transfers
+        width: 451px
+
+        @media(max-width: 1250px)
+          width: 340px
+
+        .h2
+          width: 300px
+
+        .text
+          margin-top: 68px
+        
+      &_cards
+        width: 445px
+
+        @media(max-width: 1250px)
+          width: 320px
+
+      &_merchant
+        width: 325px
+
+        .text
+          width: 305px
+
+      &_services
+        width: 493px
+
+        @media(max-width: 1250px)
+          width: 370px
+
+    &__intro
+      height: 100vh
+      position: relative
+      margin-top: 0
+      
+      .phone-block
+        margin-right: 155px
+        
+      &.subscribed
+        .h3
+          display: none
+
+          &.subscribed
+            display: block
+  
+      .h3
+        margin-top: 62px
+
+        &.subscribed
+          display: none
+
+      .container
+        padding-top: 150px
+
+      @media(max-width: 1440px)
+        .phone-block
+          margin-right: 55px
+
+    &__mockups
+      align-items: center
+      display: inline-flex
+      justify-content: flex-start
+      vertical-align: middle
+
+      .phone-block
+        &:not(.phone-block_min)
+          margin: 0 -45px
+
+        @media(max-width: 1440px)
+           &:not(.phone-block_min)
+            margin: 0 -35px
+
+    &__cards-wrap
+      display: inline-flex
+      height: 540px
+      margin-left: 10%
+      position: relative
+      vertical-align: top
+      width: 520px
+
+      .card-block    
+        position: absolute
+    
+        img
+          height: auto
+          max-width: 100%
+
+        &_1
+          bottom: 0
+          height: 450px
+          left: 0
+          width: 306px
+          z-index: 2
+
+        &_2
+          height: 471px
+          right: 0
+          top: 0
+          width: 306px
+          z-index: 1
+
+      @media(max-width: 1440px)
+        height: 378px
+        width: 364px 
+
+        .card-block
+          &_1
+            height: 315px
+            width: 214px
+
+          &_2
+            height: 330px 
+            width: 214px
+
+    &__image-wrap
+      display: inline-flex
+      height: 555px
+      vertical-align: top
+      width: 725px
+
+      img
+        height: auto
+        max-width: 100%
+
+      @media(max-width: 1440px)
+        height: 416px
+        width: 544px
+
+    &__buttons
+      align-items: center
+      display: flex
+      margin-top: 24px
+      justify-content: flex-start
+
+      .btn
+        &:first-child
+          margin-right: 12px
+
+    &__links
+      bottom: 32px
+      display: inline-flex
+      position: absolute
+      right: 45px
+
+      .item
+        &:last-child
+          margin-left: 4px
+
+    &__form
+      display: flex
+      justify-content: flex-start
+      margin-top: 42px
+
+      .input-box
+        margin-right: 29px
+
+.mobile
+  width: 100%
+  
+  .container_mobile
+    margin: 0 auto
+    padding-bottom: 60px
+
+    .screen
+      margin-bottom: 80px
+      text-align: center
+
+      .h2
+        margin-bottom: 27px
+
+      &:last-child
+        margin-bottom: 80px
+
+      &__info
+        margin: 0 auto
+        text-align: center
+
+        .h1
+          margin-bottom: 27px
+
+        &_intro
+          margin-bottom: 54px
+          width: 288px
+
+        &_unified
+          width: 288px
+
+        &_transfers
+          width: 288px
+
+        &_cards
+          width: 288px
+
+          .text
+            margin-bottom: 50px
+          
+        &_services
+          width: 288px
+
+      &__intro
+        .btn_red
+          margin: 10px 0 20px 0
+        
+        .screen__form
+          background: rgba(#DDE4EA, .5)
+          box-sizing: border-box
+          border-radius: 8px
+          padding: 41px 0 60px 0
+          margin-top: 60px
+
+          .h3
+            margin-bottom: 60px
+            width: 288px
+
+          .input-box
+            margin-bottom: 38px
+
+            input
+              border-color: rgba(#5E6A75, .1)
+
+              &::placeholder
+                color: #5E6A75
+          
+      &__mockups
+        margin: 0 auto
+        text-align: center
+        width: 100%
+
+        .swiper-container
+          margin-top: 55px
+
+          .phone-block
+            img
+              margin: 0 auto
+
+          .swiper-pagination-bullets
+            bottom: 0
+
+            .swiper-pagination-bullet
+              margin: 0 8px
+
+        .mockup
+          margin: 0 auto
+
+      &__cards-wrap
+        height: 290px
+        margin: 0 auto
+        position: relative
+        width: 288px
+
+        .card-block
+          position: absolute
+
+          img
+            height: auto
+            max-width: 100%
+
+          &_1
+            top: 50px
+            height: 240px
+            left: 0
+            width: 170px
+            z-index: 2
+
+          &_2
+            height: 240px
+            right: 0
+            top: 0
+            width: 170px
+            z-index: 1
+
+      &__image-wrap
+        border-radius: 10px
+        box-shadow: 0 0 70px 0 rgba(3, 31, 74, 0.15)
+        height: 205px
+        margin: 0 auto
+        overflow: hidden
+        width: 289px
+        
+        img
+          height: auto
+          max-width: 100%
+
+    .platform
+      display: flex
+      margin: 0 auto
+      justify-content: center
+      width: 288px
+
+      .block
+        border-radius: 4px
+        height: 40px
+        margin-left: 4px
+        width: 130px
+
+        &_ios
+          background: url('/img/ios.svg') center no-repeat / contain
+
+        &_android
+          background: url('/img/android.svg') center no-repeat / contain

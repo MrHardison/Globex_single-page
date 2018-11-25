@@ -1,0 +1,113 @@
+.header
+  background: #fff
+  align-items: center
+  box-sizing: border-box
+  height: 120px
+  display: flex
+  left: 50%
+  padding: 38px 4%
+  position: fixed
+  top: 0
+  transform: translateX(-50%)
+  justify-content: space-between
+  width: 100%
+  z-index: 6
+
+  &.hidden
+    z-index: 5
+
+  &__inner
+    display: flex
+    justify-content: flex-start
+    align-items: center
+
+    .slogan
+      display: none
+      margin-left: 33px
+
+    &_end
+      align-items: normal
+      justify-content: flex-end
+
+      .btns-block
+        align-items: center
+        display: flex
+        margin-right: 43px
+        position: relative
+        transition: opacity .5s ease-out
+        justify-content: flex-end
+
+        .btn
+          margin-right: 24px
+
+          &_red
+            display: none
+
+        .block
+          border-radius: 4px
+          height: 40px
+          margin-left: 4px
+          width: 130px
+
+          &_ios
+            background: url('/img/ios.svg') center no-repeat / contain
+
+          &_android
+            background: url('/img/android.svg') center no-repeat / contain
+
+  &.subscribed
+    .header__inner
+      .slogan
+        display: inline-flex
+
+      .btns-block
+        .btn_red
+          display: inline-flex
+
+  @media(max-width: 1023px)
+    height: auto
+    left: auto
+    margin: 0 auto
+    margin-bottom: 20px
+    padding: 20px 23px
+    position: relative
+    top: auto
+    transform: translate(0, 0)
+
+    &__inner
+      justify-content: flex-start
+
+      .logo
+        height: 27px
+        width: 100px
+
+      &_end
+        align-items: center
+
+        .btns-block
+          display: none
+
+    &.subscribed
+      padding-top: 64px
+
+      .slogan
+        align-items: center
+        background: $blue-medium
+        display: flex
+        height: 44px
+        left: 50%
+        margin: 0
+        position: absolute
+        transform: translateX(-50%)
+        top: 0
+        justify-content: center
+        width: 100%
+
+        &::before
+          display: none
+
+        &__text
+          color: #fff
+
+          &_colored
+            color: #fff

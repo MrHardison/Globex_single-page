@@ -1,0 +1,161 @@
+// Variables
+$MRegular: Montserrat-Regular
+$MBold: Montserrat-Bold
+$MBlack: Montserrat-Black
+$MLight: Montserrat-Light
+$MMedium: Montserrat-Medium
+$Avenir: Avenir
+
+// Colors
+$blue: #2196f3
+$blue-medium: #2296f3
+$blue-dark: #5E6A75
+$red: #ff1c4c
+$grey: #717a82
+$grey-light: #cbdcea
+$grey-xlight: #e0e0e0
+
+html
+  font-size: 16px
+  min-height: 100%
+
+body
+  font-family: $MRegular
+  height: 100%
+  margin: 0
+  padding: 0
+
+ul
+  padding: 0
+  margin: 0
+  list-style: none
+
+p
+  padding: 0
+  margin: 0
+
+a
+  text-decoration: none
+
+.container
+  box-sizing: border-box
+  height: 100%
+  margin: 0 auto
+  max-width: 1440px
+  padding: 0 4%
+  position: relative
+  text-align: center
+
+h1.h1
+  color: #000
+  font: 48px/64px $MMedium
+  margin: 0
+  text-align: left
+
+  @media(max-width: 1023px)
+    font: 30px/40px $MMedium
+    margin: 0 auto
+    text-align: center
+
+h2.h2
+  color: #000
+  font: 36px/54px $MRegular
+  margin: 0
+  text-align: left
+
+  @media(max-width: 1023px)
+    font: 24px/32px $MMedium
+    margin: 0 auto
+    text-align: center
+
+h3.h3
+  color: #000
+  font: 26px/26px $Avenir
+  margin: 0
+  text-align: left
+
+  @media(max-width: 1023px)
+    font: 24px/32px $MRegular
+    margin: 0 auto
+    text-align: center
+
+.text
+  color: $grey
+  font: 20px/32px $Avenir
+  text-align: left
+
+  @media(max-width: 1023px)
+    font: 16px/30px $Avenir
+    margin: 0 auto
+    text-align: center
+
+.input-box
+  width: 360px
+  
+  .email
+    font: 24px/32px $Avenir
+    color: #5E6A75
+
+  &__input
+    background: transparent
+    border: 0
+    border-bottom: 1px solid $grey-xlight
+    color: $grey
+    cursor: text
+    font: 22px/32px $Avenir
+    height: 32px
+    outline: 0
+    width: 100%
+
+    &::placeholder
+      font: 22px/32px $Avenir
+      color: rgba($grey, .2)
+
+  @media(max-width: 1023px)
+    margin: 0 auto
+    width: 300px
+
+    &__input
+      text-align: center
+
+      &::placeholder
+        text-align: center
+
+.phone-block
+  position: relative
+  height: 626px
+  width: 340px
+  z-index: 2
+
+  &_min
+    height: 504px
+    width: 280px
+
+  &_ml
+    margin-left: -20px
+
+  &_mr
+    margin-right: -20px
+
+  img
+    height: auto
+    max-width: 100%
+
+  @media(max-width: 1440px)
+    height: 450px
+    width: 260px
+
+    &_min
+      height: 353px
+      width: 210px
+
+  @media(max-width: 1023px)
+    height: 488px
+    margin: 0 auto
+    width: 265px
+
+    &_min
+      height: 488px
+      width: 265px
+
+    

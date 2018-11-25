@@ -1,0 +1,65 @@
+.btn
+  align-items: center
+  border: 0
+  box-sizing: border-box
+  border-radius: 30px
+  color: #fff
+  cursor: pointer
+  display: inline-flex
+  font: 16px/40px $MRegular
+  height: 40px
+  margin: 0
+  min-width: 165px
+  outline: 0
+  position: relative
+  padding: 0
+  transition: box-shadow .3s
+  text-align: center
+  justify-content: center
+
+  &_blue
+    background: $blue
+
+    &:hover
+      background: rgba($blue, .8)
+
+    &.disabled
+      cursor: default
+      background: rgba($blue, .2)
+
+    &.mobile-view
+      font: 18px/18px $MMedium
+
+  &_subscribed
+    cursor: default
+    background: #fff
+    color: $blue
+    font: 18px/18px $MMedium
+
+    &:hover
+      background: #fff
+
+  &_red
+    background: $red
+    justify-content: center
+
+    &:hover
+      background: rgba($red, .8)
+
+    &::before
+      background: url('/img/play.svg') center no-repeat
+      content: ''
+      display: inline
+      height: 14px
+      margin-right: 16px
+      width: 11px
+
+  @media(max-width: 1550px)
+    font: 16px/40px $MRegular
+    height: 40px
+    min-width: 170px
+
+  @media(max-width: 1023px)
+    font: 14px/46px $MRegular
+    height: 46px
+    min-width: 240px
