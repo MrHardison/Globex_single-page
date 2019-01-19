@@ -24,7 +24,7 @@
 
     &__text
       color: #000
-      font: 16px/14px $Avenir
+      font: 17px/15px $Avenir
 
       &_colored
         color: $blue
@@ -99,26 +99,24 @@
       
       .phone-block
         margin-right: 155px
-        
-      &.subscribed
-        .h3
-          display: none
-
-          &.subscribed
-            display: block
   
       .h3
         margin-top: 62px
 
-        &.subscribed
-          display: none
+        &.lineheight
+          line-height: 32px
 
-      .container
-        padding-top: 150px
+      .email
+        color: $grey
+        margin-top: 30px
+        text-align: left
 
       @media(max-width: 1440px)
         .phone-block
           margin-right: 55px
+
+    &__services
+      margin-bottom: 100px
 
     &__mockups
       align-items: center
@@ -128,22 +126,26 @@
 
       .phone-block
         &:not(.phone-block_min)
-          margin: 0 -45px
+          margin: 0 -60px
 
         @media(max-width: 1440px)
            &:not(.phone-block_min)
-            margin: 0 -35px
+            margin: 0 -50px
 
     &__cards-wrap
       display: inline-flex
-      height: 540px
+      height: 477px
       margin-left: 10%
       position: relative
       vertical-align: top
-      width: 520px
+      width: 453px
 
-      .card-block    
+      .card-block
+        border-radius: 14px
+        height: 390px 
         position: absolute
+        overflow: hidden
+        width: 246px
     
         img
           height: auto
@@ -151,30 +153,23 @@
 
         &_1
           bottom: 0
-          height: 450px
+          box-shadow: -20px 20px 40px 10px rgba(0,0,0,.09)
           left: 0
-          width: 306px
           z-index: 2
 
         &_2
-          height: 471px
+          box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.09)
           right: 0
           top: 0
-          width: 306px
           z-index: 1
 
       @media(max-width: 1440px)
-        height: 378px
-        width: 364px 
+        height: 340px
+        width: 315px 
 
         .card-block
-          &_1
-            height: 315px
-            width: 214px
-
-          &_2
-            height: 330px 
-            width: 214px
+          height: 273px
+          width: 172px 
 
     &__image-wrap
       display: inline-flex
@@ -217,7 +212,7 @@
 
       .input-box
         margin-right: 29px
-
+  
 .mobile
   width: 100%
   
@@ -243,7 +238,7 @@
           margin-bottom: 27px
 
         &_intro
-          margin-bottom: 54px
+          margin-bottom: 34px
           width: 288px
 
         &_unified
@@ -263,18 +258,21 @@
 
       &__intro
         .btn_red
-          margin: 10px 0 20px 0
+          margin: -10px 0 20px 0
         
         .screen__form
           background: rgba(#DDE4EA, .5)
           box-sizing: border-box
           border-radius: 8px
           padding: 41px 0 60px 0
-          margin-top: 60px
+          margin-top: 30px
 
           .h3
             margin-bottom: 60px
             width: 288px
+
+          .text
+            margin-bottom: 35px
 
           .input-box
             margin-bottom: 38px
@@ -284,6 +282,15 @@
 
               &::placeholder
                 color: #5E6A75
+
+            .message
+              left: 50%
+              transform: translateX(-50%)
+
+          .email
+            color: $blue-dark
+            font: 24px/32px $Avenir
+            margin-bottom: 40px
           
       &__mockups
         margin: 0 auto
@@ -291,14 +298,14 @@
         width: 100%
 
         .swiper-container
-          margin-top: 55px
+          margin-top: 35px
 
           .phone-block
             img
               margin: 0 auto
 
           .swiper-pagination-bullets
-            bottom: 0
+            bottom: 20px
 
             .swiper-pagination-bullet
               margin: 0 8px
@@ -313,6 +320,7 @@
         width: 288px
 
         .card-block
+          border-radius: 14px
           position: absolute
 
           img
@@ -320,14 +328,16 @@
             max-width: 100%
 
           &_1
-            top: 50px
-            height: 240px
+            box-shadow: -20px 20px 40px 10px rgba(0,0,0,.09)
+            height: 270px
             left: 0
+            top: 50px
             width: 170px
             z-index: 2
 
           &_2
-            height: 240px
+            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.09)
+            height: 270px
             right: 0
             top: 0
             width: 170px

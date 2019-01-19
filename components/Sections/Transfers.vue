@@ -1,38 +1,25 @@
 <template>
   <section class="screen screen__transfers">
     <div class="container">
-      <transition name="text">
-        <div v-show="show">
-          <div class="screen__info screen__info_transfers">
-            <h2 class="h2">Free and instant money transfers across the globe</h2>
-            <p class="text">
-              Revolutionary free and instant multi-currency Globex money transfers at the best currency exchange rates. Globex combines social, banking and online payments within one solution, whilst saving your money on each transaction.
-            </p>
-          </div>
-        </div>
-      </transition>
+      <div class="screen__info screen__info_transfers">
+        <h2 class="h2">Free and instant money transfers across the globe</h2>
+        <p class="text">
+          Revolutionary free and instant multi-currency money transfers at the best currency exchange rates. Galeo seamlessly combines social, banking, and online payments within one solution, whilst saving your money on each transaction.
+        </p>
+      </div>
       <div class="screen__mockups">
-        <transition name="image1">
-          <div class="phone-block phone-block_min">
-            <img
-              v-show="show"
-              src="/img/section_3_image_1.png">
-          </div>
-        </transition>
-        <transition name="image2">
-          <div class="phone-block">
-            <img
-              v-show="show"
-              src="/img/section_3_image_2.png">
-          </div>
-        </transition>
-        <transition name="image3">
-          <div class="phone-block phone-block_min phone-block_mr">
-            <img
-              v-show="show"
-              src="/img/section_3_image_3.png">
-          </div>
-        </transition>  
+        <div class="phone-block phone-block_min">
+          <img
+            src="/img/section_3_image_1.png">
+        </div>
+        <div class="phone-block">
+          <img
+            src="/img/section_3_image_2.png">
+        </div>
+        <div class="phone-block phone-block_min phone-block_mr">
+          <img
+            src="/img/section_3_image_3.png">
+        </div>
       </div>
     </div>
   </section>

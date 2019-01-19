@@ -1,34 +1,34 @@
 .lang
-	background: #fff
 	border-radius: 50%
 	cursor: pointer
-	height: 46px
+	height: 24px
 	position: relative
-	width: 46px
+	width: 24px
 
 	&:hover
 		opacity: .8
 
 	& > img
+		left: 50%
+		max-width: 100%
 		position: absolute
 		top: 50%
-		left: 50%
 		transform: translate(-50%, -50%)
 
 	&-list
 		left: 50%
 		opacity: 0
 		position: absolute
-		top: 70px
+		top: -130px
 		transition: opacity .5s
 		transform: translateX(-50%)
 
 		.item
 			cursor: pointer
 			border-radius: 50%
-			height: 28px
+			height: 24px
 			margin-bottom: 15px
-			width: 28px
+			width: 24px
 
 			&:last-child
 				margin-bottom: 0
@@ -61,7 +61,7 @@
 		width: 32px
 
 		&-list
-			top: 50px
+			top: -110px
 			
 			.item
 				height: 20px

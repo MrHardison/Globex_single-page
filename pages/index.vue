@@ -2,17 +2,30 @@
   <div
     v-if="device === 1"
     class="desktop">
-    <modal
-      :class="{visible: !closeModal}"
-      @closeModal="closeModal = $event"/>
+    <transition name="modal">
+      <modal
+        v-if="!closeModal"
+        :message="responseMessage"
+        :status="responseStatus"
+        @closeModal="closeModal = $event"
+        @subscribe="setEmail($event)"/>
+    </transition>
+    <!-- subscribed: subscribed для хедера -->
     <Header
-      :class="{hidden: !closeModal, subscribed: subscribed}"
+      :class="{hidden: !closeModal}"
       :followButton="headerFollowBtn"
       @openModal="closeModal = $event"/>
+    <Message
+      v-if="policyMessage"
+      @message="messageView"/>
     <intro
       :class="{hidden: !closeModal, subscribed: subscribed}"
       :device="device"
-      @scroll="headerFollowBtn = $event"/>
+      :subscribed="subscribed"
+      :message="responseMessage"
+      :status="responseStatus"
+      @scroll="headerFollowBtn = $event"
+      @subscribe="setEmail($event)"/>
     <unified/>
     <transfers/>
     <cards/>
@@ -22,12 +35,11 @@
   <div
     v-else-if="device === 2"
     class="mobile">
-    <modal
-      :class="{visible: !closeModal}"
-      @closeModal="closeModal = $event"/>
+    <!-- subscribed: subscribed для хедера-->
     <Header
-      :class="{hidden: !closeModal, subscribed: subscribed}"
+      :class="{hidden: !closeModal}"
       :followButton="headerFollowBtn"
+      :subscribed="subscribed"
       @openModal="closeModal = $event"/>
     <div class="container_mobile">
       <section
@@ -36,36 +48,44 @@
           class="screen__info screen__info_intro">
           <h1 class="h1">New paradigm digital bank</h1>
           <p class="text">
-            Developing based on the Bank-as-a-Platform principle digital bank, designed to provide a free banking for everyone globally and revolutionise the access to financial products.
+            Galeo is a digital bank designed to provide a free banking service globally and democratise access to financial products and services by leveraging the Bank-as-a-Platform model.
           </p>
         </div>
         <div class="phone-block">
           <img src="/img/section_1_image_1.png">
         </div>
+        <!-- v-show="subscribed" для красной кнопки -->
         <Button
-          v-show="subscribed"
+          v-if="false"
           target="_blank" 
-          class="btn btn_red">Learn more</Button>
-        <form class="screen__form">
+          class="btn btn_red">Watch Video</Button>
+        <form
+          class="screen__form">
           <h3 class="h3">Follow updates and stay tuned</h3>
-          <div class="input-box">
-            <div
-              v-show="subscribed"
-              class="email">mail@email.com</div>
+          <div
+            v-if="responseStatus === null || responseStatus === 2"
+            class="input-box">
             <input
-              v-show="!subscribed"
               v-model="email"
               class="input-box__input" 
               type="text" 
-              name="email" 
-              placeholder="E-mail">
+              placeholder="E-mail"
+              @input="checkEmail">
+            <div
+              :class="{error: responseStatus === 2}"
+              class="message">{{ responseMessage }}</div>
           </div>
           <button
-            v-show="!subscribed"
-            class="btn btn_blue mobile-view"
-            @click.prevent="">Get early access</button>
+            v-if="responseStatus === null || responseStatus === 2"
+            :class="{disabled: !markFollowBtn}"
+            name="subscribe"
+            class="btn btn_blue"
+            @click.prevent="subscribe">Get early access</button>
+          <p
+            v-if="responseStatus === 1"
+            class="text">Congratulations! You are on the waitlist now.<br>We will keep you updated on Galeo news!</p>
           <div
-            v-show="subscribed"
+            v-if="responseStatus === 1"
             class="btn btn_blue btn_subscribed">You are subscribed!</div>
         </form>
       </section>
@@ -75,7 +95,7 @@
           <div class="screen__info screen__info_unified">
             <h2 class="h2">Revolutionary boarderless account</h2>
             <p class="text">
-              Truly borderless Globex account allows customers to simply open and hold local current accounts in multiple countries Globex has a presence.
+              Truly borderless Galeo account allows customers to simply open and hold local current accounts in multiple countries Galeo has a presence.
             </p>
           </div>
           <div class="screen__mockups">
@@ -83,19 +103,19 @@
               <swiper-slide>
                 <div class="phone-block phone-block_min phone-block_ml">
                   <img
-                    src="/img/section_2_image_1.png">
+                    src="/img/mobile-slider-images/slider_1_image_1.png">
                 </div>
               </swiper-slide>
               <swiper-slide>
-                <div class="phone-block">
+                <div class="phone-block phone-block_mobile-middle">
                   <img
-                    src="/img/section_2_image_2.png">
+                    src="/img/mobile-slider-images/slider_1_image_2.png">
                 </div>
               </swiper-slide>
               <swiper-slide>
                 <div class="phone-block phone-block_min">
                   <img
-                    src="/img/section_2_image_3.png">
+                    src="/img/mobile-slider-images/slider_1_image_3.png">
                 </div>
               </swiper-slide>
               <div
@@ -111,7 +131,7 @@
           <div class="screen__info screen__info_transfers">
             <h2 class="h2">Free and instant money transfers across the globe</h2>
             <p class="text">
-              Revolutionary free and instant multi-currency Globex money transfers at the best currency exchange rates. Globex combines social, banking and online payments within one solution, whilst saving your money on each transaction.
+              Revolutionary free and instant multi-currency money transfers at the best currency exchange rates. Galeo seamlessly combines social, banking, and online payments within one solution, whilst saving your money on each transaction.
             </p>
           </div>
           <div class="screen__mockups">
@@ -119,19 +139,19 @@
               <swiper-slide>
                 <div class="phone-block">
                   <img
-                    src="/img/section_3_image_1.png">
+                    src="/img/mobile-slider-images/slider_2_image_1.png">
                 </div>
               </swiper-slide>
               <swiper-slide>
                 <div class="phone-block">
                   <img
-                    src="/img/section_3_image_2.png">
+                    src="/img/mobile-slider-images/slider_2_image_2.png">
                 </div>
               </swiper-slide>
               <swiper-slide>
                 <div class="phone-block phone-block_min">
                   <img
-                    src="/img/section_3_image_3.png">
+                    src="/img/mobile-slider-images/slider_2_image_3.png">
                 </div>
               </swiper-slide>
               <div
@@ -147,7 +167,7 @@
           <div class="screen__info screen__info_cards">
             <h2 class="h2">Free spending and cashout globally</h2>
             <p class="text">
-              Globex Cards are perfectly suitable for cost-free spending and cashout globally in more than 150 currencies and at the best real currency exchange rates.
+              Galeo Cards are perfectly suitable for cost-free spending and cashout globally in more than 150 currencies and at the best real currency exchange rates.
             </p>
           </div>
           <div class="screen__cards-wrap">
@@ -170,9 +190,9 @@
       <section class="screen screen__services">
         <div class="container">
           <div class="screen__info screen__info_services">
-            <h2 class="h2">Globex Marketplace</h2>
+            <h2 class="h2">Galeo Marketplace</h2>
             <p class="text">
-              Revolutionary approach to lending, savings, insurance and other financial products, provided by third-party financial institution, competing centralised for each customer.
+              Revolutionary customer-centric approach to providing financial products, such as credit cards, lending, savings, insurance, and other options through the centralised innovative digital marketplace.
             </p>
           </div>
           <div class="screen__mockups">
@@ -180,19 +200,19 @@
               <swiper-slide>
                 <div class="phone-block phone-block_min phone-block_ml">
                   <img
-                    src="/img/section_5_image_1.png">
+                    src="/img/mobile-slider-images/slider_3_image_1.png">
                 </div>
               </swiper-slide>
               <swiper-slide>
                 <div class="phone-block">
                   <img
-                    src="/img/section_5_image_2.png">
+                    src="/img/mobile-slider-images/slider_3_image_2.png">
                 </div>
               </swiper-slide>
               <swiper-slide>
                 <div class="phone-block phone-block_min">
                   <img
-                    src="/img/section_5_image_3.png">
+                    src="/img/mobile-slider-images/slider_3_image_3.png">
                 </div>
               </swiper-slide>
               <div
@@ -203,12 +223,19 @@
         </div>
       </section>
 
-      <div class="platform">
+      <div
+        v-if="policyMessage"
+        class="container message">
+        <Message
+          @message="messageView"/>
+      </div>
+
+      <!-- <div class="platform">
         <div
           class="block block_ios"/>
         <div
           class="block block_android"/>
-      </div>
+      </div> -->
     </div>
     <Footer/>
   </div>
@@ -224,6 +251,7 @@ import Transfers from '~/components/Sections/Transfers.vue'
 import Unified from '~/components/Sections/Unified.vue'
 import Footer from '~/components/Footer.vue'
 import Modal from '~/components/Modal.vue'
+import Message from '~/components/Message.vue'
 
 export default {
   components: {
@@ -235,15 +263,21 @@ export default {
     Transfers,
     Unified,
     Footer,
-    Modal
+    Modal,
+    Message
   },
   data() {
     return {
-      headerFollowBtn: false,
       subscribed: false,
+      responseMessage: '',
+      responseStatus: null,
+      headerFollowBtn: false,
       device: 0,
       closeModal: true,
-      email: '',
+      policyMessage: true,
+      email: null,
+      markFollowBtn: false,
+      emailPattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       swiperOption: {
         autoplay: {
           delay: 3000
@@ -256,24 +290,69 @@ export default {
     }
   },
   mounted() {
+    if (window.localStorage.getItem('message')) {
+      this.policyMessage = false
+    } else {
+      this.policyMessage = true
+    }
     window.innerWidth <= 1023 ? (this.device = 2) : (this.device = 1)
 
     window.addEventListener('resize', () => {
       window.innerWidth <= 1023 ? (this.device = 2) : (this.device = 1)
     })
+  },
+  methods: {
+    messageView() {
+      window.localStorage.setItem('message', true)
+      this.policyMessage = false
+    },
+    subscribe() {
+      this.responseMessage = ''
+      if (this.markFollowBtn) {
+        this.$axios
+          .post('/subscribe', {
+            email: this.email
+          })
+          .then(res => {
+            if (res.data.statusCode && res.data.statusCode === 200) {
+              this.responseMessage = 'Subscribed!'
+              this.responseStatus = 1
+            } else {
+              this.responseMessage = res.data.title
+              this.responseStatus = 2
+            }
+          })
+          .catch(err => {})
+      }
+    },
+    checkEmail() {
+      this.markFollowBtn = this.emailPattern.test(this.email) ? true : false
+    },
+    setEmail(email) {
+      this.email = email
+      this.markFollowBtn = true
+      this.subscribe()
+    }
   }
 }
 </script>
 
-<style lang="sass">
-.fade-enter-active,
-.fade-leave-active
-  animation: fade .5s ease-out
+<style lang="sass" scoped>
+.modal-enter-active,
+  animation: modal-enter .2s ease-in
 
-@keyframes fade
+.modal-leave-active
+  animation: modal-leave .2s ease-in
+
+@keyframes modal-enter
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes modal-leave
   from
     opacity: 1
   to
     opacity: 0
-
 </style>

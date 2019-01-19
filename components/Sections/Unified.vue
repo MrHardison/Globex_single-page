@@ -2,38 +2,25 @@
   <section class="screen screen__unified">
     <div class="container">
       <div class="screen__mockups">
-        <transition name="image1">
-          <div class="phone-block phone-block_min phone-block_ml">
-            <img
-              v-show="show"
-              src="/img/section_2_image_1.png">
-          </div>
-        </transition>
-        <transition name="image2">
-          <div class="phone-block">
-            <img
-              v-show="show"
-              src="/img/section_2_image_2.png">
-          </div>
-        </transition>
-        <transition name="image3">
-          <div class="phone-block phone-block_min">
-            <img
-              v-show="show"
-              src="/img/section_2_image_3.png">
-          </div>
-        </transition>  
-      </div>
-      <transition name="text">
-        <div v-show="show">
-          <div class="screen__info screen__info_unified">
-            <h2 class="h2">Revolutionary boarderless account</h2>
-            <p class="text">
-              Truly borderless Globex account allows customers to simply open and hold local current accounts in multiple countries Globex has a presence.
-            </p>
-          </div>
+        <div class="phone-block phone-block_min phone-block_ml">
+          <img
+            src="/img/section_2_image_1.png">
         </div>
-      </transition>
+        <div class="phone-block">
+          <img
+            src="/img/section_2_image_2.png">
+        </div>
+        <div class="phone-block phone-block_min">
+          <img
+            src="/img/section_2_image_3.png">
+        </div>
+      </div>
+      <div class="screen__info screen__info_unified">
+        <h2 class="h2">Revolutionary boarderless account</h2>
+        <p class="text">
+          Truly borderless Galeo account allows customers to simply open and hold local current accounts in multiple countries Galeo has a presence.
+        </p>
+      </div>
     </div>
   </section>
 </template>

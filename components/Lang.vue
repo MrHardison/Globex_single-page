@@ -8,7 +8,7 @@
     <img
       src="/img/en.svg"
       alt="En">
-    <ul class="lang-list">
+  <!-- <ul class="lang-list">
       <li
         class="item lang__en"
         @click="changeLang">
@@ -30,7 +30,7 @@
           src="/img/en.svg"
           alt="En">
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 

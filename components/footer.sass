@@ -10,15 +10,14 @@
     display: flex
     align-items: center
     justify-content: space-between
+    width: 100%
 
   &__links
-    display: inline-flex
-    justify-content: space-between
-    min-width: 310px
+    display: flex
+    justify-content: flex-start
 
-    &:first-child
-      margin-right: 295px
-      min-width: 130px
+    li ~ li
+      margin-left: 20px 
 
   &__link
     color: $blue-dark
@@ -27,14 +26,13 @@
   &__socials
     align-items: center
     display: inline-flex
-    margin-left: 295px
-    min-width: 230px
     justify-content: space-between
     
     a
       align-items: center
       display: flex
       height: 21px
+      margin-left: 30px
       transition: opacity .5s ease-out
       justify-content: center
       width: 21px
@@ -46,43 +44,54 @@
       &:hover
         opacity: .4
 
+    .lang
+      margin-left: 40px
+
   @media(max-width: 1440px)
     .container
       max-width: 1024px
 
-    &__links
-      &:first-child
-        margin-right: 132px
-
-    &__socials
-      margin-left: 132px
-
   @media(max-width: 1023px)
     box-sizing: border-box
     height: auto
-    padding: 31px 42px 60px 31px
+    padding: 30px 0 60px 0
+    width: 100%
 
     .container
-      align-items: flex-start
-      flex-wrap: wrap
+      display: block
       padding: 0
-      width: 320px
+      width: 100%
 
     &__links
-      flex-direction: column
-      min-width: auto
-      align-items: flex-start
-      width: 50%
+      flex-wrap: wrap
+      justify-content: flex-start
+      margin: 0 auto
+      width: 291px
 
-      &:first-child
-        margin-right: 0
-        min-width: auto
-        width: 80px
+      li
+        min-width: 93px
+        text-align: left
+
+        &:nth-child(even)
+          margin-left: 18px
+
+      li ~ li
+        margin-left: 0  
 
     &__link
       font: 14px/40px $MRegular
       white-space: nowrap
 
     &__socials
-      margin: 48px 0 0 0
-      width: 100%
+      margin: 0 auto
+      margin-top: 48px
+      position: relative
+      width: 291px
+
+      a
+        margin-left: 0
+
+      .lang
+        position: absolute
+        right: 0
+        top: -125px

@@ -3,46 +3,72 @@
     <div
       class="close"
       @click="$emit('closeModal', true)"/>
-    <form class="subscribe__form">
+    <form
+      v-if="status === 2 || status === null"
+      class="subscribe__form">
       <div class="title">Follow updates</div>
       <p class="description">
-        Enter your email to subscribe news about Globex
+        Enter your email to subscribe news about Galeo
       </p>
       <div class="input-box">
         <input
           v-model="email"
           class="input-box__input" 
-          type="text" 
-          name="email" 
-          placeholder="Email"
+          placeholder="E-mail"
           @input="checkInputEmail">
+        <div
+          :class="{ success: status === 1, error: status === 2}"
+          class="message">{{ message }}</div>
       </div>
       <button
         :class="{disabled: !markFollowBtn}"
-        class="btn btn_blue">Subscribe</button>
+        class="btn btn_blue"
+        @click.prevent="subscribe">Follow updates</button>
     </form>
     <div
-      v-if="subscribed"
+      v-if="status === 1"
       class="subscribed">
-      <div class="subtitle">You are subscribed!</div>
-      <div class="btn btn_blue">Great</div>
+      <div class="subtitle">Congratulations!</div>
+      <p class="text">
+        You are on the waitlist now. We will keep you updated on Galeo news!
+      </p>
+      <div
+        class="btn btn_blue"
+        @click="closeModal">Great</div>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: 'Modal',
+  props: {
+    message: {
+      type: String,
+      default: ''
+    },
+    status: {
+      type: Number,
+      default: 0
+    }
+  },
   data() {
     return {
       markFollowBtn: false,
       emailPattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      email: '',
-      subscribed: false
+      email: null
     }
   },
   methods: {
     checkInputEmail() {
       this.markFollowBtn = this.emailPattern.test(this.email) ? true : false
+    },
+    subscribe() {
+      if (this.markFollowBtn) {
+        this.$emit('subscribe', this.email)
+      }
+    },
+    closeModal() {
+      this.$emit('closeModal', true)
     }
   }
 }
@@ -56,13 +82,9 @@ export default {
   padding-top: 13%
   position: fixed
   top: 0
-  transform: translate(-50%, -200%)
-  transition: transform .3s linear
+  transform: translateX(-50%)
   width: 100%
   z-index: 100
-
-  &.visible
-    transform: translate(-50%, 0)
 
   .close
     box-sizing: border-box
@@ -106,20 +128,24 @@ export default {
     .btn
       display: block
       margin: 0 auto
-      margin-top: 185px
+      margin-top: 100px
       min-width: 360px
 
   .subscribed
     margin: 0 auto
-    width: 360px
+    text-align: center
 
     .subtitle
       font: 36px/36px $MRegular
-      margin-bottom: 200px
+      margin-bottom: 40px
+    
+    .text
+      text-align: center
 
     .btn
-      margin: 0
-      min-width: 100%
+      margin: 50px 0 0 0
+      min-width: auto
+      width: 360px
 
   @media(max-width: 1680px)
     padding-top: 16%
@@ -129,5 +155,5 @@ export default {
         margin-top: 100px
 
       .btn
-         margin-top: 100px
+         margin-top: 60px
 </style>

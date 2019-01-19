@@ -28,13 +28,13 @@
       background: rgba($blue, .2)
 
     &.mobile-view
-      font: 18px/18px $MMedium
+      font: 18px/40px $MMedium
 
   &_subscribed
     cursor: default
     background: #fff
-    color: $blue
-    font: 18px/18px $MMedium
+    color: #2196F3
+    font: 18px/40px $MMedium
 
     &:hover
       background: #fff
@@ -54,12 +54,22 @@
       margin-right: 16px
       width: 11px
 
+  &_wide
+    min-width: auto
+    width: 100%
+
   @media(max-width: 1550px)
     font: 16px/40px $MRegular
     height: 40px
     min-width: 170px
 
+    &_subscribed
+      font: 18px/40px $MMedium
+
   @media(max-width: 1023px)
     font: 14px/46px $MRegular
     height: 46px
     min-width: 240px
+
+    &_subscribed
+      font: 18px/40px $MMedium
