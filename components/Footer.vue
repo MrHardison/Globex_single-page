@@ -1,11 +1,11 @@
 <template>
-  <footer 
+  <footer
     class="footer">
     <div class="container">
       <ul class="footer__links">
         <li>
           <a
-            href="mailto:hello@galeo.one"
+            href="mailto:hello@omegabank.one"
             class="footer__link">Contact us</a>
         </li>
         <li>
@@ -27,42 +27,45 @@
             class="footer__link">Legal information</a>
         </li>
       </ul>
+      <p class="footer__copy">
+        Copyright © 2019 Omega Financial Technologies Limited
+      </p>
       <div class="footer__socials">
         <a
-          :href="'https://twitter.com/GaleoBank'"
           target="_blank">
           <img
             src="/img/twitter.svg"
             alt="Twitter">
         </a>
+        <!-- :href="'https://twitter.com/OmegaBanking'" -->
         <a
-          :href="'https://www.linkedin.com/company/GaleoBank'"
           target="_blank">
           <img
             src="/img/linkedin.svg"
             alt="Linkedin">
         </a>
+        <!-- :href="'https://www.linkedin.com/company/OmegaBanking'" -->
         <a
-          :href="'https://www.facebook.com/GaleoBank'"
           target="_blank">
           <img
             src="/img/facebook.svg"
             alt="Facebook">
         </a>
+        <!-- :href="'https://www.facebook.com/OmegaBanking'" -->
         <a
-          :href="'https://www.instagram.com/GaleoBank'"
           target="_blank">
           <img
             src="/img/instagram.svg"
             alt="Instagram">
         </a>
+        <!-- :href="'https://www.instagram.com/OmegaBanking'" -->
         <a
-          :href="'https://plus.google.com/b/107301910159201499701/'"
           target="_blank">
           <img
             src="/img/googleplus.svg"
             alt="Googleplus">
         </a>
+        <!-- :href="'https://plus.google.com/b/107301910159201499701/'" -->
         <Lang />
       </div>
     </div>

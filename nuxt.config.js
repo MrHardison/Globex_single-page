@@ -7,13 +7,23 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Galeo',
+    title: 'Omega',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width' },
-      { hid: 'description', name: 'description', content: 'Galeo is a new paradigm digital bank created to provide a free banking around the world and democratise access to financial products, such as credit cards, lending, savings, insurance and other.' },
-      { hid: 'keywords' , name:'keywords', content: 'Galeo, Galeo Bank, digital bank, online bank, FinTech, bank challenger, bank, bank account, debit card, credit card, international money transfer, online payments, current account, loans, savings, insurance' },
-      { hid: 'copyright', name: 'copyright', content: 'Galeo Limited' } 
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Omega is a new paradigm digital bank created to provide a free banking around the world and democratise access to financial products, such as credit cards, lending, savings, insurance and other.'
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content:
+          'Omega, Omega Bank, digital bank, online bank, FinTech, bank challenger, bank, bank account, debit card, credit card, international money transfer, online payments, current account, loans, savings, insurance'
+      },
+      { hid: 'copyright', name: 'copyright', content: 'Omega Financial Technologies Limited' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
   },
@@ -26,7 +36,11 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~/assets/fonts/fonts.sass'],
+  css: [
+    '@/assets/fonts/fonts.sass',
+    '@/assets/sass/base.sass',
+    '@/assets/sass/style.sass'
+  ],
 
   /*
   ** Plugins to load before mounting the App
@@ -44,12 +58,14 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     '@nuxtjs/google-analytics',
+
     // Global sass
-    [
-      'nuxt-sass-resources-loader',
-      ['@/assets/sass/base.sass', '@/assets/sass/style.sass']
-    ]
+    ['@nuxtjs/style-resources']
   ],
+
+  styleResources: {
+    sass: ['@/assets/sass/variables.sass']
+  },
 
   /*
   ** Google analytics

@@ -36,9 +36,9 @@
         to="/invest"
         class="header__link invest"/>
       <a
-        href="https://blog.galeo.one/"
         target="_blank"
         class="header__link">Blog</a>
+    <!-- href="https://blog.omegabank.one/" -->
     </div>
   </header>
 </template>

@@ -4,7 +4,7 @@
       <div class="screen__info screen__info_transfers">
         <h2 class="h2">Free and instant money transfers across the globe</h2>
         <p class="text">
-          Revolutionary free and instant multi-currency money transfers at the best currency exchange rates. Galeo seamlessly combines social, banking, and online payments within one solution, whilst saving your money on each transaction.
+          Omega seamlessly combines social, banking, and online payments within one solution, that allows customers to save money on each transaction using the best FX rates.
         </p>
       </div>
       <div class="screen__mockups">

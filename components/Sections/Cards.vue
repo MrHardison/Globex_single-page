@@ -16,9 +16,9 @@
         </div>
       </div>
       <div class="screen__info screen__info_cards">
-        <h2 class="h2">Free spending and cashout globally</h2>
+        <h2 class="h2">Low-rate Credit Cards</h2>
         <p class="text">
-          Galeo Cards are perfectly suitable for cost-free spending and cashout globally in more than 150 currencies and at the best real currency exchange rates.
+          A number of credit card options sutiable for customers with differing credit history level. Cards support global chashback and reward porgrammes and free spending abroad.
         </p>
       </div>
     </div>

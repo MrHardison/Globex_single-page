@@ -2,9 +2,9 @@
   <section class="screen screen__services">
     <div class="container">
       <div class="screen__info screen__info_services">
-        <h2 class="h2">Galeo Marketplace</h2>
+        <h2 class="h2">Omega Marketplace</h2>
         <p class="text">
-          Revolutionary customer-centric approach to providing financial products, such as credit cards, lending, savings, insurance, and other options through the centralised innovative digital marketplace.
+          Revolutionary customer-centric approach to providing digital financial products, such as lending, savings, insurance, and other options through the centralised innovative digital marketplace.
         </p>
       </div>
       <div class="screen__mockups">

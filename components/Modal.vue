@@ -8,7 +8,7 @@
       class="subscribe__form">
       <div class="title">Follow updates</div>
       <p class="description">
-        Enter your email to subscribe news about Galeo
+        Enter your email to subscribe news about Omega
       </p>
       <div class="input-box">
         <input
@@ -30,7 +30,7 @@
       class="subscribed">
       <div class="subtitle">Congratulations!</div>
       <p class="text">
-        You are on the waitlist now. We will keep you updated on Galeo news!
+        You are on the waitlist now. We will keep you updated on Omega news!
       </p>
       <div
         class="btn btn_blue"

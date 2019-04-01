@@ -17,7 +17,7 @@
         </nuxt-link>
         <h2 class="main-title">Our investment prospectus</h2>
         <p class="main-description text">
-          Our investment prospectus covers the general Galeo's project details, including the product, marketing, execution process, and the exceptional investment opportunity that Galeo provides. To view the prospectus, please tell us what type of investor you are.
+          Our investment prospectus covers the general Omega's project details, including the product, marketing, execution process, and the exceptional investment opportunity that Omega provides. To view the prospectus, please tell us what type of investor you are.
         </p>
       </div>
     </div>
@@ -71,7 +71,7 @@
                 I accept that the investments to which the promotions will relate may expose me to a significant risk of losing all of the money or other property invested. I am aware that it is open to me to seek advice from an authorised person who specialises in advising on unlisted shares and unlisted debt securities.
               </p>
               <a
-                href="https://galeo.one/files/Galeo_Pitch_Deck.pdf"
+                href="https://omegabank.one/files/Omega_Pitch_Deck.pdf"
                 class="btn btn_blue btn_wide">
                 I agree to this agreement
               </a>
@@ -126,7 +126,7 @@
                 I accept that the investments to which the promotions will relate may expose me to a significant risk of losing all of the money or other property invested. I am aware that it is open to me to seek advice from an authorised person who specialises in advising on unlisted shares and unlisted debt securities.
               </p>
               <a
-                href="https://galeo.one/files/Galeo_Pitch_Deck.pdf"
+                href="https://omegabank.one/files/Omega_Pitch_Deck.pdf"
                 class="btn btn_blue btn_wide">
                 I agree to this agreement
               </a>
@@ -181,7 +181,7 @@
                 I accept that the investments to which the promotions will relate may expose me to a significant risk of losing all of the money or other property invested. I am aware that it is open to me to seek advice from an authorised person who specialises in advising on unlisted shares and unlisted debt securities.
               </p>
               <a
-                href="https://galeo.one/files/Galeo_Pitch_Deck.pdf"
+                href="https://omegabank.one/files/Omega_Pitch_Deck.pdf"
                 class="btn btn_blue btn_wide">
                 I agree to this agreement
               </a>
@@ -236,7 +236,7 @@
                 I accept that the investments to which the promotions will relate may expose me to a significant risk of losing all of the money or other property invested. I am aware that it is open to me to seek advice from an authorised person who specialises in advising on unlisted shares and unlisted debt securities.
               </p>
               <a
-                href="https://galeo.one/files/Galeo_Pitch_Deck.pdf"
+                href="https://omegabank.one/files/Omega_Pitch_Deck.pdf"
                 class="btn btn_blue btn_wide">
                 I agree to this agreement
               </a>

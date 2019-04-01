@@ -14,7 +14,7 @@
 
       <h2 class="h2">Who we are</h2>
       <p class="text text_mb42">
-        Welcome to the galeo.one platform, published by Galeo Limited. We offer users an alternative online banking solution.
+        Welcome to the www.omegabank.one platform, published by Omega Financial Technologies Limited. We offer users an alternative online banking solution.
       </p>
       
       <p class="text text_mb42">

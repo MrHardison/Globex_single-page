@@ -5,16 +5,16 @@
     <div class="container">
       <div
         class="screen__info screen__info_intro">
-        <h1 class="h1">New paradigm digital bank</h1>
+        <h1 class="h1">New generation digital bank</h1>
         <p class="text">
-          Galeo is a digital bank designed to provide free banking service globally and democratise access to financial products and services by leveraging the Bank-as-a-Platform model.
+          Omega is a digital bank designed to provide free banking service globally and democratise access to financial products and services by leveraging the Bank-as-a-Platform model.
         </p>
         <h3
           v-if="status === null || status === 2"
           class="h3">Would you like to get early access?</h3>
         <h3
           v-if="status === 1"
-          class="h3 lineheight">Congratulations! You are on the waitlist now.<br>We will keep you updated on Galeo news!</h3>
+          class="h3 lineheight">Congratulations! You are on the waitlist now.<br>We will keep you updated on Omega news!</h3>
         <form
           class="screen__form">
           <div
@@ -22,8 +22,8 @@
             class="input-box">
             <input
               v-model="email"
-              class="input-box__input" 
-              type="text" 
+              class="input-box__input"
+              type="text"
               placeholder="E-mail"
               @input="checkInputEmail">
             <div

@@ -30,6 +30,7 @@
     <transfers/>
     <cards/>
     <services/>
+    <loyality/>
     <Footer/>
   </div>
   <div
@@ -46,7 +47,7 @@
         class="screen screen__intro">
         <div
           class="screen__info screen__info_intro">
-          <h1 class="h1">New paradigm digital bank</h1>
+          <h1 class="h1">New generation digital bank</h1>
           <p class="text">
             Galeo is a digital bank designed to provide a free banking service globally and democratise access to financial products and services by leveraging the Bank-as-a-Platform model.
           </p>
@@ -57,7 +58,7 @@
         <!-- v-show="subscribed" для красной кнопки -->
         <Button
           v-if="false"
-          target="_blank" 
+          target="_blank"
           class="btn btn_red">Watch Video</Button>
         <form
           class="screen__form">
@@ -67,8 +68,8 @@
             class="input-box">
             <input
               v-model="email"
-              class="input-box__input" 
-              type="text" 
+              class="input-box__input"
+              type="text"
               placeholder="E-mail"
               @input="checkEmail">
             <div
@@ -223,6 +224,20 @@
         </div>
       </section>
 
+      <section class="screen screen__loyality">
+        <div class="container">
+          <div class="screen__info screen__info_loyality">
+            <h2 class="h2">A fair loyality programme. You are Premium Customer!</h2>
+            <p class="text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            </p>
+            <div class="image__wrap">
+              <img src="/img/section_6_image_1.png">
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div
         v-if="policyMessage"
         class="container message">
@@ -242,13 +257,14 @@
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
-import Button from '~/components/Button.vue'
-import Cards from '~/components/Sections/Cards.vue'
-import Intro from '~/components/Sections/Intro.vue'
-import Services from '~/components/Sections/Services.vue'
-import Transfers from '~/components/Sections/Transfers.vue'
-import Unified from '~/components/Sections/Unified.vue'
+import Header from '~/components/Header'
+import Button from '~/components/Button'
+import Cards from '~/components/Sections/Cards'
+import Intro from '~/components/Sections/Intro'
+import Services from '~/components/Sections/Services'
+import Transfers from '~/components/Sections/Transfers'
+import Unified from '~/components/Sections/Unified'
+import Loyality from '~/components/Sections/Loyality'
 import Footer from '~/components/Footer.vue'
 import Modal from '~/components/Modal.vue'
 import Message from '~/components/Message.vue'
@@ -262,6 +278,7 @@ export default {
     Services,
     Transfers,
     Unified,
+    Loyality,
     Footer,
     Modal,
     Message

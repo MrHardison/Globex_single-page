@@ -1,150 +1,151 @@
 .header
-  background: #fff
-  align-items: center
-  box-sizing: border-box
-  height: 80px
-  left: 50%
-  padding: 0 4%
-  position: fixed
-  top: 0
-  transform: translateX(-50%)
-  width: 100%
-  z-index: 6
+	background: #fff
+	align-items: center
+	box-sizing: border-box
+	height: 80px
+	left: 50%
+	overflow: hidden
+	padding: 0 4%
+	position: fixed
+	top: 0
+	transform: translateX(-50%)
+	width: 100%
+	z-index: 6
 
-  &.invest
-    background: $blue-light
+	&.invest
+		background: $blue-light
 
-    .header__link
-      &.invest
-        cursor: default
-        color: rgba(#000, .3)
+		.header__link
+			&.invest
+				cursor: default
+				color: rgba(#000, .3)
 
-    @media(max-width: 1024px)
-      align-items: center
-      display: flex
-      margin-bottom: 0
-      height: 80px
+		@media(max-width: 1024px)
+			align-items: center
+			display: flex
+			margin-bottom: 0
+			height: 80px
 
-      .header__inner
-        .logo
-          width: 95px
+			.header__inner
+				.logo
+					width: 95px
 
-      .header__link
-        font: 18px/25px $MMedium
-        margin-right: 20px
+			.header__link
+				font: 18px/25px $MMedium
+				margin-right: 20px
 
-        &:last-child
-          margin-right: 0
+				&:last-child
+					margin-right: 0
 
-  &.hidden
-    z-index: 5
+	&.hidden
+		z-index: 5
 
-  &.centered
-    max-width: 1440px
-    display: flex
-    justify-content: space-between
+	&.centered
+		max-width: 1440px
+		display: flex
+		justify-content: space-between
 
-  &__inner
-    display: flex
-    justify-content: flex-start
-    align-items: center
+	&__inner
+		display: flex
+		justify-content: flex-start
+		align-items: center
 
-    .slogan
-      display: none
-      margin-left: 33px
+		.slogan
+			display: none
+			margin-left: 33px
 
-    &_end
-      align-items: center
-      justify-content: flex-end
+		&_end
+			align-items: center
+			justify-content: flex-end
 
-      .btns-block
-        align-items: center
-        display: flex
-        margin-right: 30px
-        position: relative
-        transition: opacity .5s ease-out
-        justify-content: flex-end
+			.btns-block
+				align-items: center
+				display: flex
+				margin-right: 30px
+				position: relative
+				transition: opacity .5s ease-out
+				justify-content: flex-end
 
-        .btn
-          margin-left: 24px
+				.btn
+					margin-left: 24px
 
-          &_red
-            display: none
+					&_red
+						display: none
 
-          &_blue
-            transform: translateY(-200%)
-            transition: transform .5s ease
+					&_blue
+						transform: translateY(-200%)
+						transition: transform .5s ease
 
-            &.show
-              transform: translateY(0)
+						&.show
+							transform: translateY(0)
 
-            &.hide
-              transform: translateY(-200%)
+						&.hide
+							transform: translateY(-200%)
 
-          &:first-child
-            margin-left: 0
+					&:first-child
+						margin-left: 0
 
-  &__link
-    color: #000
-    font: 20px/27px $MMedium
-    margin-right: 30px
+	&__link
+		color: #000
+		font: 20px/27px $MMedium
+		margin-right: 30px
 
-    &:last-child
-      margin-right: 0
+		&:last-child
+			margin-right: 0
 
-  &.subscribed
-    .header__inner
-      .slogan
-        display: inline-flex
+	&.subscribed
+		.header__inner
+			.slogan
+				display: inline-flex
 
-      .btns-block
-        .btn_red
-          display: inline-flex
+			.btns-block
+				.btn_red
+					display: inline-flex
 
-  @media(max-width: 1023px)
-    height: auto
-    left: auto
-    margin: 0 auto
-    margin-bottom: 20px
-    padding: 20px 23px
-    position: relative
-    top: auto
-    transform: translate(0, 0)
+	@media(max-width: 1023px)
+		height: auto
+		left: auto
+		margin: 0 auto
+		margin-bottom: 20px
+		padding: 20px 23px
+		position: relative
+		top: auto
+		transform: translate(0, 0)
 
-    &__inner
-      justify-content: flex-start
+		&__inner
+			justify-content: flex-start
 
-      .logo
-        height: 27px
-        width: 100px
+			.logo
+				height: 27px
+				width: 100px
 
-      &_end
-        align-items: center
+			&_end
+				align-items: center
 
-        .btns-block
-          display: none
+				.btns-block
+					display: none
 
-    &.subscribed
-      padding-top: 64px
+		&.subscribed
+			padding-top: 64px
 
-      .slogan
-        align-items: center
-        background: $blue-medium
-        display: flex
-        height: 44px
-        left: 50%
-        margin: 0
-        position: absolute
-        transform: translateX(-50%)
-        top: 0
-        justify-content: center
-        width: 100%
+			.slogan
+				align-items: center
+				background: $blue-medium
+				display: flex
+				height: 44px
+				left: 50%
+				margin: 0
+				position: absolute
+				transform: translateX(-50%)
+				top: 0
+				justify-content: center
+				width: 100%
 
-        &::before
-          display: none
+				&::before
+					display: none
 
-        &__text
-          color: #fff
+				&__text
+					color: #fff
 
-          &_colored
-            color: #fff
+					&_colored
+						color: #fff

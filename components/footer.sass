@@ -4,7 +4,7 @@
   display: flex
   height: 100px
   justify-content: space-between
-  width: 100% 
+  width: 100%
 
   .container
     display: flex
@@ -12,22 +12,33 @@
     justify-content: space-between
     width: 100%
 
+  &__copy
+    color: $blue-dark
+    font: 12px/30px $MRegular
+    white-space: nowrap
+
+    @media( max-width: 1023px)
+      bottom: -55px
+      left: 50%
+      position: absolute
+      transform: translateX(-50%)
+
   &__links
     display: flex
     justify-content: flex-start
 
     li ~ li
-      margin-left: 20px 
+      margin-left: 20px
 
   &__link
     color: $blue-dark
     font: 12px/30px $MRegular
-    
+
   &__socials
     align-items: center
     display: inline-flex
     justify-content: space-between
-    
+
     a
       align-items: center
       display: flex
@@ -47,14 +58,10 @@
     .lang
       margin-left: 40px
 
-  @media(max-width: 1440px)
-    .container
-      max-width: 1024px
-
   @media(max-width: 1023px)
     box-sizing: border-box
     height: auto
-    padding: 30px 0 60px 0
+    padding: 30px 0 80px 0
     width: 100%
 
     .container
@@ -76,7 +83,7 @@
           margin-left: 18px
 
       li ~ li
-        margin-left: 0  
+        margin-left: 0
 
     &__link
       font: 14px/40px $MRegular

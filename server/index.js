@@ -21,7 +21,7 @@ let config = require('../nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
 
 app.post('/subscribe', (req, res, next) => {
-  const mailchimp = new Mailchimp('')
+  const mailchimp = new Mailchimp('12d34de04bbdf1f6fc4b81bddd52dfbe-us19')
   mailchimp
     .post('/lists/0ddfc576ce/members', {
       email_address: req.body.hasOwnProperty('email') ? req.body.email : '',

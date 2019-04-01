@@ -16,9 +16,9 @@
         </div>
       </div>
       <div class="screen__info screen__info_unified">
-        <h2 class="h2">Revolutionary boarderless account</h2>
+        <h2 class="h2">Free multi-currency banking</h2>
         <p class="text">
-          Truly borderless Galeo account allows customers to simply open and hold local current accounts in multiple countries Galeo has a presence.
+          Omega provides free multi-currency borderless accounts with debit cards allow to spend and withdraw money gobally at the best currency exchnage rates.
         </p>
       </div>
     </div>

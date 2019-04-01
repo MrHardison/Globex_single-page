@@ -73,12 +73,15 @@
 
         .text
           margin-top: 68px
-        
+
       &_cards
         width: 445px
 
         @media(max-width: 1250px)
           width: 320px
+
+      &_loyality
+        width: 485px
 
       &_merchant
         width: 325px
@@ -96,10 +99,10 @@
       height: 100vh
       position: relative
       margin-top: 0
-      
+
       .phone-block
         margin-right: 155px
-  
+
       .h3
         margin-top: 62px
 
@@ -115,9 +118,6 @@
         .phone-block
           margin-right: 55px
 
-    &__services
-      margin-bottom: 100px
-
     &__mockups
       align-items: center
       display: inline-flex
@@ -130,7 +130,7 @@
 
         @media(max-width: 1440px)
            &:not(.phone-block_min)
-            margin: 0 -50px
+            margin: 0 -53px
 
     &__cards-wrap
       display: inline-flex
@@ -146,7 +146,7 @@
         position: absolute
         overflow: hidden
         width: 246px
-    
+
         img
           height: auto
           max-width: 100%
@@ -170,6 +170,19 @@
         .card-block
           height: 273px
           width: 172px 
+
+    &__loyality
+      .image__wrap
+        margin-left: 150px
+        width: 398px
+
+        img
+          height: auto
+          max-width: 100%
+
+      @media(max-width: 1440px)
+        .image__wrap
+	        margin-left: 0
 
     &__image-wrap
       display: inline-flex
@@ -212,13 +225,12 @@
 
       .input-box
         margin-right: 29px
-  
+
 .mobile
   width: 100%
-  
+
   .container_mobile
     margin: 0 auto
-    padding-bottom: 60px
 
     .screen
       margin-bottom: 80px
@@ -229,6 +241,9 @@
 
       &:last-child
         margin-bottom: 80px
+
+      &__cards
+        padding-bottom: 30px
 
       &__info
         margin: 0 auto
@@ -252,14 +267,27 @@
 
           .text
             margin-bottom: 50px
-          
+
         &_services
           width: 288px
+
+        &_loyality
+          margin-bottom: 0
+          width: 290px
+
+          .image__wrap
+            margin: 0 auto
+            margin-top: 55px
+            width: 240px
+
+            img
+              height: auto
+              max-width: 100%
 
       &__intro
         .btn_red
           margin: -10px 0 20px 0
-        
+
         .screen__form
           background: rgba(#DDE4EA, .5)
           box-sizing: border-box
@@ -291,7 +319,7 @@
             color: $blue-dark
             font: 24px/32px $Avenir
             margin-bottom: 40px
-          
+
       &__mockups
         margin: 0 auto
         text-align: center
@@ -350,7 +378,7 @@
         margin: 0 auto
         overflow: hidden
         width: 289px
-        
+
         img
           height: auto
           max-width: 100%
